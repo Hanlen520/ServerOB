@@ -14,21 +14,26 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 # http://blog.csdn.net/smalltankpy/article/details/53616053
 
+
 @app.route('/')
 def home():
     return render_template('login.html')
+
 
 @app.route('/service')
 def service():
     return 'service'
 
+
 @app.route('/about')
 def about():
     return 'about'
 
+
 @log_printer('Run server...')
 def run_server():
     app.run(debug=True)
+
 
 if __name__ == '__main__':
     run_server()
